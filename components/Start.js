@@ -60,8 +60,8 @@ const Start = ({navigation}) => {
                     </TouchableOpacity>
                 </View>
                 {/* End Body Container */}
-             {/* Fixes issue on iOS where keyboard overalaps background color picker
-            {Platform.OS === "ios" ? <KeyboardAvoidingView behavior="padding" /> : null} */}
+             {/* Fixes issue on iOS where keyboard overalaps background color picker */}
+            {Platform.OS === "ios" ? <KeyboardAvoidingView behavior="padding" /> : null} 
             </ImageBackground>
     );
 }

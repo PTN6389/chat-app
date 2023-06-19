@@ -59,8 +59,8 @@ const Chat = ({route, navigation}) => {
                     _id: 1
                 }}         
             />
-            {/* Fixes issue with keyboard overlapping chat input text box for older android 
-            { Platform.OS === 'android' ? <KeyboardAvoidingView behavior="height" /> : null }*/}
+            {/* Fixes issue with keyboard overlapping chat input text box for older android */}
+            { Platform.OS === 'android' ? <KeyboardAvoidingView behavior="height" /> : null }
         </View>
     );
 }
