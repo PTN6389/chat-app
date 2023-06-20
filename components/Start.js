@@ -11,14 +11,16 @@ const Start = ({navigation}) => {
 
     const signInUser = () => {
         signInAnonymously(auth)
-        .then(result => {
-            navigation.navigate("Chat", {userID: result.user.uid, name: name, color: color });
+        .then((result) => {
+            navigation.navigate("Chat", 
+            {userID: result.user.uid, name: name, color: color 
+            });
             Alert.alert("Signed in successfully!");
         })
         .catch((error) => {
             Alert.alert("Unable to sign in, please try again later.");
-        })
-    }
+        });
+    };
 
     return(
         
