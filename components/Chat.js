@@ -4,8 +4,9 @@ import { StyleSheet, View, KeyboardAvoidingView, Platform } from "react-native";
 import { addDoc, collection, onSnapshot, orderBy, query } from "firebase/firestore";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import MapView from "react-native-maps";
+import CustomActions from "./CustomActions";
 
-const Chat = ({db, route, navigation, isConnected}) => {
+const Chat = ({db, route, navigation, isConnected, storage}) => {
     const { userID, name, color } = route.params;
     const [messages, setMessages] = useState([]);
 
