@@ -3,7 +3,7 @@ import { Bubble, GiftedChat, InputToolbar } from "react-native-gifted-chat";
 import { StyleSheet, View, KeyboardAvoidingView, Platform } from "react-native";
 import { addDoc, collection, onSnapshot, orderBy, query } from "firebase/firestore";
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import MapView from "react-native-maps";
+//import MapView from "react-native-maps";
 import CustomActions from "./CustomActions";
 
 const Chat = ({db, route, navigation, isConnected, storage}) => {
@@ -84,7 +84,8 @@ const Chat = ({db, route, navigation, isConnected, storage}) => {
     const renderCustomView = (props) => {
         const { currentMessage } = props;
         if(currentMessage.location) {
-            return (
+            console.log('MapView');
+            /* return (
                 <MapView 
                     style={{width: 150, height: 100, borderRadius: 13, margin: 3}}
                     region={{
@@ -94,7 +95,7 @@ const Chat = ({db, route, navigation, isConnected, storage}) => {
                         longitudeDelta: 0.0421
                     }}
                 />
-            );
+            ); */
         }
         return null;
     }

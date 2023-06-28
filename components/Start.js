@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { StyleSheet, View, Text, TextInput, Image, TouchableOpacity, ImageBackground, KeyboardAvoidingView, Alert } from "react-native";
 import { getAuth, signInAnonymously } from "firebase/auth";
+import { Platform } from "react-native";
 
 
 
