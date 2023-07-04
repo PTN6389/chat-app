@@ -71,7 +71,8 @@ const Start = ({navigation}) => {
 
                     <TouchableOpacity 
                         style={styles.button}
-                        onPress={signInUser}>
+                        onPress={signInUser}
+                        >
                         <Text style={styles.buttonText}>Start Chatting</Text>
                     </TouchableOpacity>
                 </View>

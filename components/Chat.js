@@ -102,19 +102,17 @@ const Chat = ({db, route, navigation, isConnected, storage}) => {
 
     return(
         <View style={[styles.container,{backgroundColor: color}]}>
-            <GiftedChat 
-                messages={messages}
-                renderBubble={renderBubble}
-                renderInputToolbar={renderInputToolbar}
-                renderActions={renderCustomActions}
-                renderCustomView={renderCustomView}
-                onSend={(messages) => onSend(messages)}   
-                user={{
-                    _id: userID,
-                    name
-                }}
-                         
-            />
+            <GiftedChat
+        // style={styles.textingBox}
+        messages={messages}
+        renderBubble={renderBubble}
+        renderInputToolbar={renderInputToolbar}
+        renderActions={renderCustomActions}
+        renderCustomView={renderCustomView}
+        onSend={messages => onSend(messages)}
+                //  _id={userID}
+        user={{ _id: userID, name }}
+      />
             {/* Fixes issue with keyboard overlapping chat input text box for older android */}
             { Platform.OS === 'android' ? <KeyboardAvoidingView behavior="height" /> : null }
         </View>
