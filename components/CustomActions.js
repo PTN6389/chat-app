@@ -14,7 +14,7 @@ const CustomActions = ({wrapperStyle, iconTextStyle, onSend, storage, userID }) 
     const uploadAndSendImage = async (imageURI) => {
         const uniqueRefString = generateReference(imageURI);
         const newUploadRef = ref(storage, uniqueRefString);
-        const response = await fetch(imageUIR);
+        const response = await fetch(imageURI);
         const blob = await response.blob();
         uploadBytes(newUploadRef, blob).then(async(snapshot) => {
             const imageURL = await getDownloadURL(snapshot.ref)
@@ -24,9 +24,9 @@ const CustomActions = ({wrapperStyle, iconTextStyle, onSend, storage, userID }) 
 
     const pickImage = async () => {
         let permissions = await ImagePicker.requestMediaLibraryPermissionsAsync();
-        if (permisions?.granted) {
+        if (permissions?.granted) {
             let result = await ImagePicker.launchImageLibraryAsync();
-            if (!result.canceled) await uploadAndSendImage(result.assets[0].uri);
+        if (!result.canceled) await uploadAndSendImage(result.assets[0].uri);
             else Alert.alert("Permissions haven't been granted.");
         }
     }
@@ -88,7 +88,7 @@ const CustomActions = ({wrapperStyle, iconTextStyle, onSend, storage, userID }) 
     };
 
     return (
-        <TouchableOpacity style={styles.container}>
+        <TouchableOpacity style={styles.container} onPress={onActionPress}>
             <View style={[styles.wrapper, wrapperStyle]}>
                 <Text style={[styles.iconText, iconTextStyle]}>+</Text>
             </View>
